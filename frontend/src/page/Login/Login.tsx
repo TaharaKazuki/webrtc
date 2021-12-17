@@ -2,20 +2,25 @@ import { useState, FC } from 'react'
 import { useHistory } from 'react-router-dom'
 import logo from '../../resources/logo.png'
 
+// component
+import UsernameInput from './components/UsernameInput'
+import SubmitButton from './components/SubmitButton'
+
+// redux
+import { setUser } from '../../features/dashbord/dashbordSlice'
+import { useAppDispatch } from '../../app/hooks'
+// style
 import './Login.scss'
 
-interface ILoignProps {
-  saveUsername: (name: string) => void
-}
-
-const Login: FC<ILoignProps> = ({ saveUsername }) => {
+const Login: FC = () => {
   const [username, setUsername] = useState('')
+  const dispatch = useAppDispatch()
 
   const history = useHistory()
 
-  const handleSubmitButton = () => {
+  const handleSubmit = () => {
     history.push('/dashboard')
-    saveUsername(username)
+    dispatch(setUser({ username }))
   }
 
   return (
@@ -27,8 +32,8 @@ const Login: FC<ILoignProps> = ({ saveUsername }) => {
         <div className="loginPage_title_container">
           <h2>Get on Board</h2>
         </div>
-        {/* <UsernameInput username={username} setUsername={setUsername} /> */}
-        {/* <SubmitButton handleSubmitButtonPressed={handleSubmitButtonPressed} /> */}
+        <UsernameInput username={username} setUsername={setUsername} />
+        <SubmitButton handleSubmit={handleSubmit} />
       </div>
     </div>
   )
