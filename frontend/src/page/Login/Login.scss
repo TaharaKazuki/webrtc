@@ -119,6 +119,25 @@
     justify-content: center;
     align-items: center;
   }
+  &_button_container {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &_button {
+    border-radius: 50px;
+    outline: none;
+    border: 1px solid #e6e5e8;
+    font-size: 16px;
+    padding: 10px 10px;
+    width: 170px;
+    transition: 0.3s;
+    &:hover {
+      background-color: #8706f0;
+      opacity: 0.5;
+    }
+  }
 }
 
 // 一旦そのまま
@@ -137,28 +156,6 @@
   font-size: 16px;
   font-weight: 500;
   padding: 10px 10px;
-}
-
-.login-page_button_container {
-  width: 80%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.login-page_button {
-  border-radius: 50px;
-  outline: none;
-  border: 1px solid #e6e5e8;
-  font-size: 16px;
-  padding: 10px 10px;
-  width: 170px;
-  transition: 0.3s;
-}
-
-.login-page_button:hover {
-  background-color: #8706f0;
-  opacity: 0.5;
 }
 
 ::-webkit-input-placeholder {

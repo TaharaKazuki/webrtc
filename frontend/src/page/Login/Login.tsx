@@ -32,7 +32,7 @@ const Login: FC = () => {
         <div className="loginPage_title_container">
           <h2>Get on Board</h2>
         </div>
-        <UsernameInput username={username} setUsername={setUsername} />
+        {/* <UsernameInput username={username} setUsername={setUsername} /> */}
         <SubmitButton handleSubmit={handleSubmit} />
       </div>
     </div>
